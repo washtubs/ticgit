@@ -146,6 +146,7 @@ module TicGitNG
         when 'state';    ts = ts.sort_by{|a| a.state }
         when 'date';     ts = ts.sort_by{|a| a.opened }
         when 'title';    ts = ts.sort_by{|a| a.title }
+        when 'points';   ts = ts.sort{|a, b| a.points && b.points ? a.points <=> b.points : a.points ? 1 : -1 }
         end
 
         ts = ts.reverse if type == 'desc'

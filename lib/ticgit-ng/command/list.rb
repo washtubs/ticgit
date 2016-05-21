@@ -56,6 +56,7 @@ module TicGitNG
             just('State', 5),
             just('Date', 5),
             just('Assgn', 8),
+            just('Pts', 3),
             just('Tags', 20) ].join(" ")
 
           puts "-" * cols
@@ -69,6 +70,7 @@ module TicGitNG
               just(t.state, 5),
               t.opened.strftime("%m/%d"),
               just(t.assigned_name, 8),
+              just("%03d" % (t.points or 0), 3),
               just(t.tags.join(','), 20) ].join(" ")
           end
           puts
